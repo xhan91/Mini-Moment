@@ -91,7 +91,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let appDomain = NSBundle.mainBundle().bundleIdentifier
                 NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
                 self.profileImageView.image = UIImage(named: "cat")!
-                self.performSegueWithIdentifier("logout_to_login", sender: self)
+                let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+                self.presentViewController(loginVC, animated: true, completion: nil)
             } else {
                 print(error)
             }

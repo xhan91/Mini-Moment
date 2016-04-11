@@ -51,19 +51,33 @@ class RegisterViewController: UIViewController {
                     prefs.synchronize()
                     let alert = UIAlertController(title: "Congratulations!", message: "Welcome, \(nickyName), start to enjoy your Moments", preferredStyle: .Alert)
                     let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { action in
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                     })
                     alert.addAction(okAction)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    
+                    let alert = UIAlertController(title: "Oops!", message: "Did not register successfully, maybe try again?", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Default) { _ in
+                        self.passwordTextField.text = ""
+                        self.confirmPasswordTextField.text = ""
+                    }
+                    alert.addAction(okAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             })
+        } else {
+            let alert = UIAlertController(title: "Sorry", message: "Please confirm all information are correct", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default) { _ in
+                self.passwordTextField.text = ""
+                self.confirmPasswordTextField.text = ""
+            }
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
     @IBAction func haveAccountButtonPressed(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

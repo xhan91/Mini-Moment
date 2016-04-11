@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         if let _ = PFUser.currentUser() {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                     prefs.setObject(username, forKey: "USERNAME")
                     prefs.setObject(password, forKey: "PASSWORD")
                     prefs.synchronize()
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     self.passwordTextField.text = ""
                     let alert = UIAlertController(title: "Login failed", message: nil, preferredStyle: .Alert)

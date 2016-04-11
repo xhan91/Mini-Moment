@@ -48,9 +48,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Moments" id="tgS-az-0ms"/>
-                    <connections>
-                        <segue destination="iKF-HE-J5C" kind="presentation" identifier="goto_login" id="KeA-jF-C8k"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeV-dB-xJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -285,7 +282,6 @@
                         <outlet property="numberOfSaysLabel" destination="Okj-JI-xEv" id="H1O-eb-ydI"/>
                         <outlet property="numberOfVideosLabel" destination="7AO-wv-7kK" id="8od-6X-FnK"/>
                         <outlet property="profileImageView" destination="tVd-Fd-H9z" id="h9o-9I-4xa"/>
-                        <segue destination="iKF-HE-J5C" kind="presentation" identifier="logout_to_login" id="ycP-w3-rRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="579-HI-ZoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,7 +313,7 @@
         <!--Login View Controller-->
         <scene sceneID="0bi-X7-LXB">
             <objects>
-                <viewController id="iKF-HE-J5C" customClass="LoginViewController" customModule="Mini_Moment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="iKF-HE-J5C" customClass="LoginViewController" customModule="Mini_Moment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nlA-te-b0a"/>
                         <viewControllerLayoutGuide type="bottom" id="qLL-ky-vxe"/>
@@ -434,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4r-55-WHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="2547"/>
+            <point key="canvasLocation" x="-964" y="2235"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="hWP-Jw-OkT">
@@ -566,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVk-Zd-Vgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="2547"/>
+            <point key="canvasLocation" x="-308" y="2235"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3Ph-tf-nRj">
@@ -658,7 +654,4 @@
         <image name="settings" width="25" height="25"/>
         <image name="user_male_circle" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ycP-w3-rRL"/>
-    </inferredMetricsTieBreakers>
 </document>

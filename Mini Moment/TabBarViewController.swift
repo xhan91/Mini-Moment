@@ -16,6 +16,32 @@ class TabBarViewController: UITabBarController {
         addButton()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = PFUser.currentUser() {
+        } else {
+            checkLogInStatus()
+        }
+    }
+    
+    func checkLogInStatus() {
+        let prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        if let username = prefs.stringForKey("USERNAME"),
+            let password = prefs.stringForKey("PASSWORD") {
+            PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) in
+                if let username = user?.username {
+                    print("successfully logged in as \(username)")
+                } else {
+                    let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+                    self.presentViewController(loginVC, animated: true, completion: nil)
+                }
+            }
+        } else {
+            let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            self.presentViewController(loginVC, animated: true, completion: nil)
+        }
+    }
+    
     func addButton() {
         let button = UIButton(type: UIButtonType.System) as UIButton
         let image = UIImage(named: "task-icon-post")!
