@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func setPhotoSource(source: String) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.allowsEditing = true
+        //pickerController.allowsEditing = true
         if (source == "Camera") {
             pickerController.sourceType = .Camera
             pickerController.cameraDevice = .Front
@@ -82,6 +82,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func settingButtonPressed(sender: UIBarButtonItem) {
+        PFUser.logOutInBackgroundWithBlock { (error) in
+            if error == nil {
+                print("logout")
+                let appDomain = NSBundle.mainBundle().bundleIdentifier
+                NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
+                self.profileImageView.image = UIImage(named: "cat")!
+                self.performSegueWithIdentifier("logout_to_login", sender: self)
+            } else {
+                print(error)
+            }
+        }
     }
 
 }

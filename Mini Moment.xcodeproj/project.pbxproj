@@ -17,6 +17,10 @@
 		F9D86B291CB8A28100FBC9BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B281CB8A28100FBC9BF /* Post.swift */; };
 		F9D86B2B1CB8A98400FBC9BF /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B2A1CB8A98400FBC9BF /* TimelineViewController.swift */; };
 		F9D86B2D1CB8AC3800FBC9BF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B2C1CB8AC3800FBC9BF /* ProfileViewController.swift */; };
+		F9D86B311CBA36CA00FBC9BF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B301CBA36CA00FBC9BF /* TabBarViewController.swift */; };
+		F9D86B331CBAA8E500FBC9BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B321CBAA8E500FBC9BF /* LoginViewController.swift */; };
+		F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B341CBACBDB00FBC9BF /* Extension.swift */; };
+		F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		F9D86B281CB8A28100FBC9BF /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F9D86B2A1CB8A98400FBC9BF /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F9D86B2C1CB8AC3800FBC9BF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F9D86B301CBA36CA00FBC9BF /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F9D86B321CBAA8E500FBC9BF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F9D86B341CBACBDB00FBC9BF /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,9 @@
 			children = (
 				F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */,
 				F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */,
+				F9D86B301CBA36CA00FBC9BF /* TabBarViewController.swift */,
+				F9D86B321CBAA8E500FBC9BF /* LoginViewController.swift */,
+				F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */,
 				F9D86B2C1CB8AC3800FBC9BF /* ProfileViewController.swift */,
 				F9D86B2A1CB8A98400FBC9BF /* TimelineViewController.swift */,
 				F9D86B001CB8971E00FBC9BF /* Assets.xcassets */,
@@ -158,6 +169,7 @@
 		F9D86B271CB8A26100FBC9BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F9D86B341CBACBDB00FBC9BF /* Extension.swift */,
 				F9D86B281CB8A28100FBC9BF /* Post.swift */,
 			);
 			name = Models;
@@ -350,7 +362,11 @@
 			files = (
 				F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */,
 				F9D86B291CB8A28100FBC9BF /* Post.swift in Sources */,
+				F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */,
+				F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */,
+				F9D86B331CBAA8E500FBC9BF /* LoginViewController.swift in Sources */,
 				F9D86B2D1CB8AC3800FBC9BF /* ProfileViewController.swift in Sources */,
+				F9D86B311CBA36CA00FBC9BF /* TabBarViewController.swift in Sources */,
 				F9D86B2B1CB8A98400FBC9BF /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

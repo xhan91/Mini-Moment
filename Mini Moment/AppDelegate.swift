@@ -23,25 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Parse.initializeWithConfiguration(configuration)
-        
-        let user = PFUser()
-        let username = "josh"
-        let password = "xinxin129"
-        user.username = username
-        user.password = password
-        user.signUpInBackgroundWithBlock { (success, error) -> Void in
-            if success {
-                print("successfully signed up a user")
-            }else {
-                PFUser.logInWithUsernameInBackground(username, password: password) { (user, error) -> Void in
-                    if let username = user?.username {
-                        print("successfully logged in \(username)")
-                    } else {
-                        print("wrong password")
-                    }
-                }
-            }
-        }
+
         return true
     }
 
