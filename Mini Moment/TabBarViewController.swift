@@ -57,6 +57,7 @@ class TabBarViewController: UITabBarController {
     }
     
     func buttonAction() {
-        print("a")
+        let postNavVC = self.storyboard!.instantiateViewControllerWithIdentifier("PostNaviViewController") as! PostNaviViewController
+        presentViewController(postNavVC, animated: false, completion: nil)
     }
 }
