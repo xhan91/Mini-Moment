@@ -19,6 +19,11 @@ class TimelineViewController: UITableViewController {
 
     var posts = [[Post]]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.separatorStyle = .None
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return posts.count ?? 0
     }

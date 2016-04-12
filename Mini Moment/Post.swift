@@ -10,19 +10,18 @@ import Foundation
 import UIKit
 import Parse
 
-class Post: PFObject {
+class Post: PFObject, PFSubclassing {
+    
+    static func parseClassName() -> String {
+        return "Post"
+    }
+    
     @NSManaged var type: String // says, photos, videos
     @NSManaged var photo: PFFile?
-    //@NSManaged var video: PFFile?
+    @NSManaged var video: PFFile?
     @NSManaged var comment: String
-//    @NSManaged var createdAt: NSDate?
     @NSManaged var timestamp: NSDate
-    
-//    var date: String {
-//        let timestampComponent = NSDateComponents()
-//        let a
-//        return
-//    }
+    @NSManaged var date: String
     
     init (type: String) {
         super.init()
@@ -41,7 +40,9 @@ class Post: PFObject {
         self.comment = comment
     }
     
-//    convenience init (type: String, video: , comment: String) {
-//        
-//    }
+    convenience init (type: String, video: PFFile, comment: String) {
+        self.init(type: "photo")
+        self.video = video
+        self.comment = comment
+    }
 }

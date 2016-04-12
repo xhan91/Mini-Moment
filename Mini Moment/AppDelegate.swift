@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Parse.initializeWithConfiguration(configuration)
-
+        Post.registerSubclass()
+        
         return true
     }
 

@@ -22,6 +22,7 @@
 		F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B341CBACBDB00FBC9BF /* Extension.swift */; };
 		F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */; };
 		F9D86B3F1CBC52A800FBC9BF /* PostNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */; };
+		F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F9D86B341CBACBDB00FBC9BF /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNaviViewController.swift; sourceTree = "<group>"; };
+		F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				F9D86B2C1CB8AC3800FBC9BF /* ProfileViewController.swift */,
 				F9D86B2A1CB8A98400FBC9BF /* TimelineViewController.swift */,
 				F9D86B001CB8971E00FBC9BF /* Assets.xcassets */,
+				F9D86B421CBCB86300FBC9BF /* TimelineCells */,
 				F9D86B271CB8A26100FBC9BF /* Models */,
 				F9D86B021CB8971E00FBC9BF /* LaunchScreen.storyboard */,
 				F9D86B051CB8971E00FBC9BF /* Info.plist */,
@@ -176,6 +179,14 @@
 				F9D86B281CB8A28100FBC9BF /* Post.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F9D86B421CBCB86300FBC9BF /* TimelineCells */ = {
+			isa = PBXGroup;
+			children = (
+				F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */,
+			);
+			name = TimelineCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +377,7 @@
 				F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */,
 				F9D86B291CB8A28100FBC9BF /* Post.swift in Sources */,
 				F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */,
+				F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */,
 				F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */,
 				F9D86B331CBAA8E500FBC9BF /* LoginViewController.swift in Sources */,
 				F9D86B2D1CB8AC3800FBC9BF /* ProfileViewController.swift in Sources */,
