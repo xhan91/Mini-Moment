@@ -7,13 +7,47 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class SayTableViewCell: UITableViewCell {
 
-    var isFirst: Bool = false
-    var isLast: Bool = false
+    var isFirst: Bool = false {
+        didSet{
+            upBar.hidden = isFirst
+            dateLabel.hidden = !isFirst
+        }
+    }
+    var isLast: Bool = false {
+        didSet{
+            downBar.hidden = isLast
+        }
+    }
     
-    @IBOutlet weak var sayTextView: UITextView!
+    @IBOutlet weak var upBar: UIView!
+    @IBOutlet weak var downBar: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    var post: Post? {
+        didSet{
+            switch post!.type {
+            case "say":
+                let sayTextView = UITextView(frame: CGRectMake(0, 0, 240, 140))
+                sayTextView.editable = false
+                sayTextView.text = post!.comment
+                self.containerView.addSubview(sayTextView)
+            case "photo":
+                let photoImageView = UIImageView(frame: CGRectMake(0, 0, 240, 140))
+                photoImageView.contentMode = .ScaleAspectFill
+//            case "video":
+//                let moviePlayer = MPMoviePlayerController(contentURL: <#T##NSURL!#>)
+//                
+            default:
+                break;
+            }
+        }
+    }
+    
+    @IBOutlet weak var containerView: UIView!
     
     
     override func awakeFromNib() {

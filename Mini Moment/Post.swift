@@ -16,7 +16,8 @@ class Post: PFObject, PFSubclassing {
         return "Post"
     }
     
-    @NSManaged var type: String // says, photos, videos
+    @NSManaged var user: PFUser
+    @NSManaged var type: String // say, photo, video
     @NSManaged var photo: PFFile?
     @NSManaged var video: PFFile?
     @NSManaged var comment: String
@@ -25,8 +26,10 @@ class Post: PFObject, PFSubclassing {
     
     init (type: String) {
         super.init()
+        user = PFUser.currentUser()!
         self.type = type
         timestamp = NSDate()
+        date = "\(timestamp)"
     }
     
     convenience init (says: String, comment: String) {
