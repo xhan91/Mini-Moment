@@ -430,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4r-55-WHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="2235"/>
+            <point key="canvasLocation" x="-1532" y="-285"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="hWP-Jw-OkT">
@@ -562,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVk-Zd-Vgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-308" y="2235"/>
+            <point key="canvasLocation" x="-876" y="-285"/>
         </scene>
         <!--Post Navi View Controller-->
         <scene sceneID="7zt-O9-vTf">
@@ -577,7 +577,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIw-rd-njI">
-                                <rect key="frame" x="375" y="450" width="50" height="50"/>
+                                <rect key="frame" x="350" y="500" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="9gb-oF-vHX"/>
                                     <constraint firstAttribute="height" constant="50" id="zWK-AT-Pkh"/>
@@ -585,15 +585,15 @@
                                 <state key="normal" title="Button" image="clapperboard"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a6-JR-VFJ">
-                                <rect key="frame" x="275" y="400" width="50" height="50"/>
+                                <rect key="frame" x="275" y="450" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E7W-CP-T1H"/>
                                     <constraint firstAttribute="width" constant="50" id="OW0-tp-aaM"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="add_camera"/>
+                                <state key="normal" title="Button" image="camera"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-bZ-I20">
-                                <rect key="frame" x="175" y="450" width="50" height="50"/>
+                                <rect key="frame" x="200" y="500" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CYl-ui-Ovs"/>
                                     <constraint firstAttribute="width" constant="50" id="y8b-NX-hA6"/>
@@ -601,20 +601,25 @@
                                 <state key="normal" title="Button" image="speech_bubble"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7a6-JR-VFJ" firstAttribute="centerX" secondItem="4Xb-jU-j6K" secondAttribute="centerX" id="1uw-uk-fcz"/>
                             <constraint firstItem="KIw-rd-njI" firstAttribute="top" secondItem="7a6-JR-VFJ" secondAttribute="bottom" id="DCh-8E-S14"/>
-                            <constraint firstItem="Hk1-Mq-bxR" firstAttribute="top" secondItem="7a6-JR-VFJ" secondAttribute="bottom" constant="150" id="aSb-17-DuC"/>
-                            <constraint firstItem="KIw-rd-njI" firstAttribute="leading" secondItem="7a6-JR-VFJ" secondAttribute="trailing" constant="50" id="d1g-Ng-4av"/>
-                            <constraint firstItem="7a6-JR-VFJ" firstAttribute="leading" secondItem="qKD-bZ-I20" secondAttribute="trailing" constant="50" id="hnZ-LW-Bns"/>
+                            <constraint firstItem="Hk1-Mq-bxR" firstAttribute="top" secondItem="7a6-JR-VFJ" secondAttribute="bottom" constant="100" id="aSb-17-DuC"/>
+                            <constraint firstItem="KIw-rd-njI" firstAttribute="leading" secondItem="7a6-JR-VFJ" secondAttribute="trailing" constant="25" id="d1g-Ng-4av"/>
+                            <constraint firstItem="7a6-JR-VFJ" firstAttribute="leading" secondItem="qKD-bZ-I20" secondAttribute="trailing" constant="25" id="hnZ-LW-Bns"/>
                             <constraint firstItem="qKD-bZ-I20" firstAttribute="top" secondItem="7a6-JR-VFJ" secondAttribute="bottom" id="mQV-y0-lKf"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="UG1-bT-OI9" appends="YES" id="Nkq-Yh-Xpe"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="movieButton" destination="KIw-rd-njI" id="KAc-ZI-JMF"/>
+                        <outlet property="photoButton" destination="7a6-JR-VFJ" id="H5y-do-cmB"/>
+                        <outlet property="sayButton" destination="qKD-bZ-I20" id="Fcz-zv-HWq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6E-wI-6NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="UG1-bT-OI9">
@@ -707,8 +712,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_camera" width="48" height="48"/>
         <image name="calendar" width="25" height="25"/>
+        <image name="camera" width="48" height="48"/>
         <image name="cat" width="48" height="48"/>
         <image name="clapperboard" width="48" height="48"/>
         <image name="icon" width="60" height="60"/>

@@ -58,6 +58,7 @@ class TabBarViewController: UITabBarController {
     
     func buttonAction() {
         let postNavVC = self.storyboard!.instantiateViewControllerWithIdentifier("PostNaviViewController") as! PostNaviViewController
+        postNavVC.modalPresentationStyle = .OverFullScreen
         presentViewController(postNavVC, animated: false, completion: nil)
     }
 }
