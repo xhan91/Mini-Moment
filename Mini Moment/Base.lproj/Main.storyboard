@@ -24,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pX-PC-EWu">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pX-PC-EWu">
                                             <rect key="frame" x="8" y="8" width="43" height="29"/>
                                             <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
@@ -689,6 +689,9 @@
                                     <constraint firstAttribute="height" constant="50" id="zWK-AT-Pkh"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="clapperboard"/>
+                                <connections>
+                                    <action selector="movieButtonPressed:" destination="fyx-1s-Who" eventType="touchUpInside" id="9Sl-gE-v6Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a6-JR-VFJ">
                                 <rect key="frame" x="275" y="450" width="50" height="50"/>
@@ -697,6 +700,9 @@
                                     <constraint firstAttribute="width" constant="50" id="OW0-tp-aaM"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="photoButtonPressed:" destination="fyx-1s-Who" eventType="touchUpInside" id="XGr-mE-b7Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-bZ-I20">
                                 <rect key="frame" x="200" y="500" width="50" height="50"/>
@@ -705,6 +711,9 @@
                                     <constraint firstAttribute="width" constant="50" id="y8b-NX-hA6"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="speech_bubble"/>
+                                <connections>
+                                    <action selector="sayButtonPressed:" destination="fyx-1s-Who" eventType="touchUpInside" id="G3v-Hj-ydH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -725,6 +734,7 @@
                         <outlet property="movieButton" destination="KIw-rd-njI" id="KAc-ZI-JMF"/>
                         <outlet property="photoButton" destination="7a6-JR-VFJ" id="H5y-do-cmB"/>
                         <outlet property="sayButton" destination="qKD-bZ-I20" id="Fcz-zv-HWq"/>
+                        <segue destination="dKj-PF-CPd" kind="presentation" identifier="postNaviGoToPostEdit" id="V6v-95-YJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6E-wI-6NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,6 +745,67 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="712" y="12"/>
+        </scene>
+        <!--Edit your Post-->
+        <scene sceneID="s3g-8u-Gh8">
+            <objects>
+                <viewController id="ZAY-2f-cHg" customClass="PostEditViewController" customModule="Mini_Moment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e1B-zu-fgL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xm2-2c-5ES"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IdY-Ha-Ya6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cm5-Uy-0fY">
+                                <rect key="frame" x="20" y="80" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FaY-5P-E0M"/>
+                                    <constraint firstAttribute="width" constant="240" id="GWd-OL-G6U"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwe-ql-4M4">
+                                <rect key="frame" x="20" y="225" width="560" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="rxN-LO-zLh"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cwe-ql-4M4" firstAttribute="leading" secondItem="IdY-Ha-Ya6" secondAttribute="leadingMargin" id="29D-6V-YB9"/>
+                            <constraint firstItem="Cwe-ql-4M4" firstAttribute="top" secondItem="Cm5-Uy-0fY" secondAttribute="bottom" constant="17" id="C5h-cw-wGD"/>
+                            <constraint firstItem="Cm5-Uy-0fY" firstAttribute="top" secondItem="e1B-zu-fgL" secondAttribute="bottom" constant="16" id="bBo-KR-12y"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Cm5-Uy-0fY" secondAttribute="leading" id="e8c-uL-2gI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cwe-ql-4M4" secondAttribute="trailing" id="emj-d7-3rZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit your Post" id="bRE-3r-c4s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7X9-id-VCV">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="ZAY-2f-cHg" id="S65-C9-nuk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fq0-ED-YjJ">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="ZAY-2f-cHg" id="HlY-KS-YhJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentTextField" destination="Cwe-ql-4M4" id="Nrt-aU-EoN"/>
+                        <outlet property="contentView" destination="Cm5-Uy-0fY" id="6ca-Ja-2X4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4n-2I-VTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205" y="12"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3Ph-tf-nRj">
@@ -815,6 +886,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyM-MQ-N8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-964" y="817"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AbD-KZ-T6v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dKj-PF-CPd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MFJ-bj-4qO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZAY-2f-cHg" kind="relationship" relationship="rootViewController" id="sfR-CR-jLd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfI-Zg-leY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="12"/>
         </scene>
     </scenes>
     <resources>

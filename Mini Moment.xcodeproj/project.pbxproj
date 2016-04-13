@@ -23,6 +23,7 @@
 		F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */; };
 		F9D86B3F1CBC52A800FBC9BF /* PostNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */; };
 		F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */; };
+		F9D86B4A1CBE0CB400FBC9BF /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNaviViewController.swift; sourceTree = "<group>"; };
 		F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayTableViewCell.swift; sourceTree = "<group>"; };
+		F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */,
 				F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */,
+				F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */,
 				F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */,
 				F9D86B301CBA36CA00FBC9BF /* TabBarViewController.swift */,
 				F9D86B321CBAA8E500FBC9BF /* LoginViewController.swift */,
@@ -383,6 +386,7 @@
 				F9D86B2D1CB8AC3800FBC9BF /* ProfileViewController.swift in Sources */,
 				F9D86B3F1CBC52A800FBC9BF /* PostNaviViewController.swift in Sources */,
 				F9D86B311CBA36CA00FBC9BF /* TabBarViewController.swift in Sources */,
+				F9D86B4A1CBE0CB400FBC9BF /* PostEditViewController.swift in Sources */,
 				F9D86B2B1CB8A98400FBC9BF /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

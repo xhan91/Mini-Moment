@@ -19,3 +19,13 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension UIViewController {
+    var contentViewController: UIViewController {
+        if let navcon = self as? UINavigationController {
+            return navcon.visibleViewController!
+        } else {
+            return self
+        }
+    }
+}
