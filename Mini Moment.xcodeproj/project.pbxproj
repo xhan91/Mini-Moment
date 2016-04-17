@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AEC3C55602D9457E993628CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04A2D7F9F5C2B46EAE45F5 /* Pods.framework */; };
+		F970C4E61CC0C63200F39FB9 /* PostEditPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */; };
+		F970C4E81CC360CB00F39FB9 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */; };
 		F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */; };
 		F9D86AFF1CB8971E00FBC9BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */; };
 		F9D86B011CB8971E00FBC9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D86B001CB8971E00FBC9BF /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */; };
 		F9D86B3F1CBC52A800FBC9BF /* PostNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */; };
 		F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */; };
+		F9D86B4A1CBE0CB400FBC9BF /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,8 @@
 		8DF3CF21EFD9AB045B06141B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		97E11B5D783694DB7EA98825 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DE04A2D7F9F5C2B46EAE45F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditPageViewController.swift; sourceTree = "<group>"; };
+		F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		F9D86AF61CB8971D00FBC9BF /* Mini Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Moment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D86AFE1CB8971E00FBC9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		F9D86B361CBACE8000FBC9BF /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNaviViewController.swift; sourceTree = "<group>"; };
 		F9D86B401CBCB84D00FBC9BF /* SayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SayTableViewCell.swift; sourceTree = "<group>"; };
+		F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,9 @@
 			children = (
 				F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */,
 				F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */,
+				F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */,
+				F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */,
+				F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */,
 				F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */,
 				F9D86B301CBA36CA00FBC9BF /* TabBarViewController.swift */,
 				F9D86B321CBAA8E500FBC9BF /* LoginViewController.swift */,
@@ -376,13 +385,16 @@
 			files = (
 				F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */,
 				F9D86B291CB8A28100FBC9BF /* Post.swift in Sources */,
+				F970C4E81CC360CB00F39FB9 /* FriendViewController.swift in Sources */,
 				F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */,
 				F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */,
 				F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */,
 				F9D86B331CBAA8E500FBC9BF /* LoginViewController.swift in Sources */,
+				F970C4E61CC0C63200F39FB9 /* PostEditPageViewController.swift in Sources */,
 				F9D86B2D1CB8AC3800FBC9BF /* ProfileViewController.swift in Sources */,
 				F9D86B3F1CBC52A800FBC9BF /* PostNaviViewController.swift in Sources */,
 				F9D86B311CBA36CA00FBC9BF /* TabBarViewController.swift in Sources */,
+				F9D86B4A1CBE0CB400FBC9BF /* PostEditViewController.swift in Sources */,
 				F9D86B2B1CB8A98400FBC9BF /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

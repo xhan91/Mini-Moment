@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
                     prefs.synchronize()
                     let alert = UIAlertController(title: "Congratulations!", message: "Welcome, \(nickyName), start to enjoy your Moments", preferredStyle: .Alert)
                     let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { action in
-                        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                        self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                     })
                     alert.addAction(okAction)
                     self.presentViewController(alert, animated: true, completion: nil)
