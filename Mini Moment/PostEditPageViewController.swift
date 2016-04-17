@@ -15,8 +15,8 @@ class PostEditPageViewController: UIViewController {
     
     var type = ""
     var videoPath = ""
+    var videoURL = NSURL()
     var photo = UIImage(named: "cat-background")
-    var needToLayout = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,13 @@ class PostEditPageViewController: UIViewController {
             photoImageView.bottomAnchor.constraintEqualToAnchor(contentView.bottomAnchor).active = true
             photoImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor).active = true
             photoImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor).active = true
+        case PostType.Video:
+            let avPlayer = AVPlayer(URL: videoURL)
+            let playerController = AVPlayerViewController()
+            playerController.player = avPlayer
+            playerController.view.frame = contentView.bounds
+            self.contentView.addSubview(playerController.view)
+//            avPlayer.play()
         default:
             break
         }
@@ -94,33 +101,6 @@ class PostEditPageViewController: UIViewController {
         lazyPhotoImageView.roundCornersForAspectFit(10)
         return lazyPhotoImageView
     }()
-
-    func displayInContentView() {
-        switch type {
-        case PostType.Say:
-            break
-        case PostType.Photo:
-            let photoImageView = UIImageView(frame: CGRectMake(0, 0, contentView.bounds.width, contentView.bounds.height))
-            //            photoImageView.layer.borderWidth = 3
-            //            photoImageView.layer.borderColor = UIColor.blueColor().CGColor
-            photoImageView.contentMode = .ScaleAspectFit
-            photoImageView.image = photo
-            photoImageView.roundCornersForAspectFit(10)
-            self.contentView.addSubview(photoImageView)
-        case PostType.Video:
-            if let videoURL = NSURL(string: videoPath) {
-                let avPlayer = AVPlayer(URL: videoURL)
-                let playerController = AVPlayerViewController()
-                playerController.player = avPlayer
-                playerController.view.frame = contentView.bounds
-                self.contentView.addSubview(playerController.view)
-                //                avPlayer.play()
-            }
-        default:
-            break
-        }
-        
-    }
     
     @IBAction func doneButtonPressed() {
         let comment = textView.text

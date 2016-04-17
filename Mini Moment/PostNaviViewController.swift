@@ -147,7 +147,13 @@ class PostNaviViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
                 self.videoPath = videoPath
                 self.videoURL = videoURL
-                performSegueWithIdentifier("postNaviGoToPostEdit", sender: self)
+//                performSegueWithIdentifier("postNaviGoToPostEdit", sender: self)
+                let pepVC = PostEditPageViewController()
+                let navVC = UINavigationController(rootViewController: pepVC)
+                pepVC.type = type
+                pepVC.videoPath = self.videoPath
+                pepVC.videoURL = self.videoURL
+                presentViewController(navVC, animated: true, completion: nil)
             }
         }
     }

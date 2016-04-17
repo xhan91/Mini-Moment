@@ -32,21 +32,23 @@ class SayTableViewCell: UITableViewCell {
     @IBOutlet weak var upBar: UIView!
     @IBOutlet weak var downBar: UIView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
         
     var post: Post? {
         didSet{
             if let post = post {
                 dateLabel.text = " " + post.date + "  "
-                dateLabel.textColor = UIColor.whiteColor()
+                timeLabel.text = post.localeTime
+//                dateLabel.textColor = UIColor.whiteColor()
                 switch post.type {
-                case "say":
+                case PostType.Say:
                     playerView.hidden = true
                     photoImageView.hidden = true
                     sayTextView.hidden = false
                     
                     sayTextView.text = post.comment
                     commentTextView.hidden = true
-                case "photo":
+                case PostType.Photo:
                     playerView.hidden = true
                     photoImageView.hidden = false
                     sayTextView.hidden = true
@@ -62,7 +64,7 @@ class SayTableViewCell: UITableViewCell {
                             self.photoImageView.image = photo
                         }
                     })
-                case "video":
+                case PostType.Video:
                     playerView.hidden = false
                     photoImageView.hidden = true
                     sayTextView.hidden = true
@@ -77,7 +79,6 @@ class SayTableViewCell: UITableViewCell {
                             let tmp = NSTemporaryDirectory()
                             let videoPath = "\(tmp)/\(post.objectId).mp4"
                             let videoURL = NSURL(fileURLWithPath: videoPath)
-//                            try! data.writeToURL(videoURL, options: [.AtomicWrite])
                             data.writeToURL(videoURL, atomically: true)
                             
                             let player = AVPlayer(URL: videoURL)
@@ -101,23 +102,24 @@ class SayTableViewCell: UITableViewCell {
         
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 10
-        dateLabel.layer.cornerRadius = 10
+        dateLabel.layer.cornerRadius = 5
         dateLabel.clipsToBounds = true
+        dateLabel.backgroundColor = UIColor.blueColor()
+        dateLabel.textColor = UIColor.whiteColor()
+        dateLabel.font.fontWithSize(20)
+        timeLabel.textColor = UIColor.lightGrayColor()
         
         /* set up 3 views for 3 types of posts */
-//        sayTextView = UITextView(frame: CGRectMake(0, 0, containerView.bounds.width, containerView.bounds.height))
         sayTextView.editable = false
-//        containerView.addSubview(sayTextView)
+        sayTextView.layer.cornerRadius = 5
+        sayTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        sayTextView.layer.borderWidth = 3
         
-//        photoImageView = UIImageView(frame: CGRectMake(0, 0, self.containerView.bounds.width, self.containerView.bounds.width))
-//        photoImageView.contentMode = .ScaleAspectFill
         photoImageView.contentMode = .ScaleAspectFill
         photoImageView.layer.cornerRadius = 5
-//        containerView.insertSubview(photoImageView, atIndex: 0)
 
         playerViewController = AVPlayerViewController()
         playerViewController.view.frame = playerView.bounds
-//        containerView.insertSubview(playerViewController.view, atIndex: 0)
         playerView.addSubview(playerViewController.view)
         
         sayTextView.hidden = true
