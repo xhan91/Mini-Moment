@@ -17,8 +17,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var numberOfVideosLabel: UILabel!
     @IBOutlet weak var nickyNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-
-    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

@@ -18,34 +18,56 @@ class Post: PFObject, PFSubclassing {
     
     @NSManaged var user: PFUser
     @NSManaged var type: String // say, photo, video
-    @NSManaged var photo: PFFile?
-    @NSManaged var video: PFFile?
+    @NSManaged var photo: PFFile
+    @NSManaged var video: PFFile
     @NSManaged var comment: String
     @NSManaged var timestamp: NSDate
     @NSManaged var date: String
+    @NSManaged var localeTime: String
     
-    init (type: String) {
-        super.init()
-        user = PFUser.currentUser()!
-        self.type = type
-        timestamp = NSDate()
-        date = "\(timestamp)"
-    }
-    
-    convenience init (says: String, comment: String) {
-        self.init(type: "say")
+    convenience init(comment: String) {
+        self.init()
+        self.type = PostType.Say
         self.comment = comment
+        timestamp = NSDate()
+        date = transformTimestampToDate(timestamp)
+        localeTime = transformTimestampToLocaleTime(timestamp)
+        user = PFUser.currentUser()!
     }
     
-    convenience init (photos: String, photo: PFFile, comment: String) {
-        self.init(type: "photo")
+    convenience init(photo: PFFile, comment: String) {
+        self.init()
+        self.type = PostType.Photo
         self.photo = photo
         self.comment = comment
+        timestamp = NSDate()
+        date = transformTimestampToDate(timestamp)
+        localeTime = transformTimestampToLocaleTime(timestamp)
+        user = PFUser.currentUser()!
     }
     
-    convenience init (type: String, video: PFFile, comment: String) {
-        self.init(type: "photo")
+    convenience init(video: PFFile, comment: String) {
+        self.init()
+        self.type = PostType.Video
         self.video = video
         self.comment = comment
+        timestamp = NSDate()
+        date = transformTimestampToDate(timestamp)
+        localeTime = transformTimestampToLocaleTime(timestamp)
+        user = PFUser.currentUser()!
+    }
+    
+    func transformTimestampToDate(timestamp: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        let date = formatter.stringFromDate(timestamp)
+        return date
+    }
+    
+    func transformTimestampToLocaleTime(timestamp: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        let localeTime = formatter.stringFromDate(timestamp)
+        return localeTime
     }
 }

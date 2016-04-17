@@ -44,17 +44,17 @@ class TabBarViewController: UITabBarController {
     
     func addButton() {
         let button = UIButton(type: UIButtonType.System) as UIButton
-        let image = UIImage(named: "task-icon-post")!
-        button.frame = CGRectMake(0, 0, image.size.height, image.size.width)
-        button.backgroundColor = UIColor.blackColor()
-        button.layer.cornerRadius = 25
+        let image = UIImage(named: "plus_button")!
+        button.frame = CGRectMake(0, 0, image.size.width, image.size.height)
+        button.backgroundColor = UIColor.lightGrayColor()
         button.setBackgroundImage(image, forState: UIControlState.Normal)
-        //button.setTitle("Test", forState: UIControlState.Normal)
         button.addTarget(self, action: #selector(TabBarViewController.buttonAction), forControlEvents: UIControlEvents.TouchUpInside)
         let center = self.tabBar.center
         button.center = center
         self.view.addSubview(button)
     }
+        
+ 
     
     func buttonAction() {
         let postNavVC = self.storyboard!.instantiateViewControllerWithIdentifier("PostNaviViewController") as! PostNaviViewController

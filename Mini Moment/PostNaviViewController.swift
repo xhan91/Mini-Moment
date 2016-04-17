@@ -18,8 +18,10 @@ class PostNaviViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var newMedia = true
     var type = ""
-    var image = UIImage()
+    var photo = UIImage()
     var videoPath = ""
+    var videoURL = NSURL()
+    var willShowAnimate = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,10 @@ class PostNaviViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        showAnimate()
+        if willShowAnimate {
+            showAnimate()
+            willShowAnimate = false
+        }
     }
     
     func showAnimate() {
@@ -118,7 +123,7 @@ class PostNaviViewController: UIViewController, UIImagePickerControllerDelegate,
             pickerController.mediaTypes = [kUTTypeMovie as String]
             pickerController.videoMaximumDuration = 120 // Perhaps reduce 180 to 120
             pickerController.videoQuality = UIImagePickerControllerQualityType.TypeMedium
-            self.type = "photo"
+            self.type = "video"
         default:
             break
         }
@@ -132,15 +137,33 @@ class PostNaviViewController: UIViewController, UIImagePickerControllerDelegate,
             if newMedia == true {
                 UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
             }
-            self.image = image
+            self.photo = image
             performSegueWithIdentifier("postNaviGoToPostEdit", sender: self)
         } else if type == "video" {
-            let videoPath = info[UIImagePickerControllerMediaURL] as! String
-            if newMedia == true {
-                UISaveVideoAtPathToSavedPhotosAlbum(videoPath, self, nil, nil)
+            let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+            if let videoPath = videoURL.relativePath {
+                if newMedia == true {
+                    UISaveVideoAtPathToSavedPhotosAlbum(videoPath, self, nil, nil)
+                }
+                self.videoPath = videoPath
+                self.videoURL = videoURL
+                performSegueWithIdentifier("postNaviGoToPostEdit", sender: self)
             }
-            self.videoPath = videoPath
-            performSegueWithIdentifier("postNaviGoToPostEdit", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController.contentViewController as? PostEditViewController {
+            destination.type = type
+            switch type {
+            case "photo":
+                destination.photo = self.photo
+            case "video":
+                destination.videoPath = self.videoPath
+                destination.videoURL = self.videoURL
+            default:
+                break
+            }
         }
     }
 
