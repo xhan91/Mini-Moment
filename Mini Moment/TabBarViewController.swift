@@ -44,14 +44,19 @@ class TabBarViewController: UITabBarController {
     
     func addButton() {
         let button = UIButton(type: UIButtonType.System) as UIButton
+        button.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(named: "plus_button")!
-        button.frame = CGRectMake(0, 0, image.size.width, image.size.height)
+//        button.frame = CGRectMake(0, 0, image.size.width, image.size.height)
         button.backgroundColor = UIColor.lightGrayColor()
         button.setBackgroundImage(image, forState: UIControlState.Normal)
         button.addTarget(self, action: #selector(TabBarViewController.buttonAction), forControlEvents: UIControlEvents.TouchUpInside)
-        let center = self.tabBar.center
-        button.center = center
+//        let center = self.tabBar.center
+//        button.center = center
         self.view.addSubview(button)
+        button.topAnchor.constraintEqualToAnchor(self.tabBar.topAnchor).active = true
+        button.bottomAnchor.constraintEqualToAnchor(self.tabBar.bottomAnchor).active = true
+        button.centerXAnchor.constraintEqualToAnchor(self.tabBar.centerXAnchor).active = true
+        button.widthAnchor.constraintEqualToConstant(image.size.width).active = true
     }
         
  

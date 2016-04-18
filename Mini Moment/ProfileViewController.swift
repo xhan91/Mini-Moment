@@ -88,7 +88,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("logout")
                 let appDomain = NSBundle.mainBundle().bundleIdentifier
                 NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
-                self.profileImageView.image = UIImage(named: "cat")!
+                self.profileImageView.image = UIImage(named: "kitty")!
                 let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
                 self.presentViewController(loginVC, animated: true, completion: nil)
             } else {

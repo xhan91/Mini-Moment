@@ -39,7 +39,7 @@ class SayTableViewCell: UITableViewCell {
             if let post = post {
                 dateLabel.text = " " + post.date + "  "
                 timeLabel.text = post.localeTime
-//                dateLabel.textColor = UIColor.whiteColor()
+
                 switch post.type {
                 case PostType.Say:
                     playerView.hidden = true
@@ -102,11 +102,6 @@ class SayTableViewCell: UITableViewCell {
         
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 10
-        dateLabel.layer.cornerRadius = 5
-        dateLabel.clipsToBounds = true
-        dateLabel.backgroundColor = UIColor.blueColor()
-        dateLabel.textColor = UIColor.whiteColor()
-        dateLabel.font.fontWithSize(20)
         timeLabel.textColor = UIColor.lightGrayColor()
         
         /* set up 3 views for 3 types of posts */
@@ -119,8 +114,13 @@ class SayTableViewCell: UITableViewCell {
         photoImageView.layer.cornerRadius = 5
 
         playerViewController = AVPlayerViewController()
-        playerViewController.view.frame = playerView.bounds
+        playerViewController.view.translatesAutoresizingMaskIntoConstraints = false
         playerView.addSubview(playerViewController.view)
+        
+        playerViewController.view.topAnchor.constraintEqualToAnchor(playerView.topAnchor).active = true
+        playerViewController.view.bottomAnchor.constraintEqualToAnchor(playerView.bottomAnchor).active = true
+        playerViewController.view.leadingAnchor.constraintEqualToAnchor(playerView.leadingAnchor).active = true
+        playerViewController.view.trailingAnchor.constraintEqualToAnchor(playerView.trailingAnchor).active = true
         
         sayTextView.hidden = true
         photoImageView.hidden = true

@@ -19,17 +19,27 @@ class TimelineViewController: UITableViewController {
 
     var posts = [[Post]]()
     var dates = [String]()
+    var date = ""
+    var fromCalender = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .None
-        updateData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        refreshControlPulled(self.refreshControl!)
     }
     
     @IBAction func refreshControlPulled(sender: UIRefreshControl) {
-        updateData()
+        if !fromCalender {
+            updateData()
+        } else {
+            updateDataForTheDate()
+        }
     }
     
+    /* this function is called at the root timeline view */
     func updateData() {
         getDateSet()
         if let query = Post.query(),
@@ -68,6 +78,22 @@ class TimelineViewController: UITableViewController {
                             self.dates.append(post.date)
                         }
                     }
+                }
+            })
+        }
+    }
+    
+    /* This function is called when from calender view */
+    func updateDataForTheDate() {
+        if let query = Post.query(),
+            let user = PFUser.currentUser() {
+            query.orderByAscending("timestamp")
+            query.whereKey("user", equalTo: user)
+            query.whereKey("date", equalTo: date)
+            query.findObjectsInBackgroundWithBlock({ (posts, error) in
+                if let posts = posts as? [Post] {
+                    self.posts = [posts]
+                    self.tableView.reloadData()
                 }
             })
         }

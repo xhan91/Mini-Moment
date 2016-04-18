@@ -10,6 +10,7 @@
 		AEC3C55602D9457E993628CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE04A2D7F9F5C2B46EAE45F5 /* Pods.framework */; };
 		F970C4E61CC0C63200F39FB9 /* PostEditPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */; };
 		F970C4E81CC360CB00F39FB9 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */; };
+		F9C3568B1CC477A90086FA17 /* CalenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3568A1CC477A90086FA17 /* CalenderTableViewController.swift */; };
 		F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */; };
 		F9D86AFF1CB8971E00FBC9BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */; };
 		F9D86B011CB8971E00FBC9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D86B001CB8971E00FBC9BF /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		DE04A2D7F9F5C2B46EAE45F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditPageViewController.swift; sourceTree = "<group>"; };
 		F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		F9C3568A1CC477A90086FA17 /* CalenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderTableViewController.swift; sourceTree = "<group>"; };
 		F9D86AF61CB8971D00FBC9BF /* Mini Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Moment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9D86AFE1CB8971E00FBC9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				F9D86AF91CB8971E00FBC9BF /* AppDelegate.swift */,
 				F9D86AFD1CB8971E00FBC9BF /* Main.storyboard */,
 				F970C4E71CC360CB00F39FB9 /* FriendViewController.swift */,
+				F9C3568A1CC477A90086FA17 /* CalenderTableViewController.swift */,
 				F9D86B491CBE0CB400FBC9BF /* PostEditViewController.swift */,
 				F970C4E51CC0C63200F39FB9 /* PostEditPageViewController.swift */,
 				F9D86B3E1CBC52A800FBC9BF /* PostNaviViewController.swift */,
@@ -386,6 +389,7 @@
 				F9D86AFA1CB8971E00FBC9BF /* AppDelegate.swift in Sources */,
 				F9D86B291CB8A28100FBC9BF /* Post.swift in Sources */,
 				F970C4E81CC360CB00F39FB9 /* FriendViewController.swift in Sources */,
+				F9C3568B1CC477A90086FA17 /* CalenderTableViewController.swift in Sources */,
 				F9D86B351CBACBDB00FBC9BF /* Extension.swift in Sources */,
 				F9D86B411CBCB84D00FBC9BF /* SayTableViewCell.swift in Sources */,
 				F9D86B371CBACE8000FBC9BF /* RegisterViewController.swift in Sources */,
