@@ -269,7 +269,7 @@
 				TargetAttributes = {
 					F9D86AF51CB8971D00FBC9BF = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 985SCTYCG4;
+						DevelopmentTeam = Y25E34872U;
 					};
 					F9D86B091CB8971E00FBC9BF = {
 						CreatedOnToolsVersion = 7.3;
@@ -540,6 +540,7 @@
 			baseConfigurationReference = 8DF3CF21EFD9AB045B06141B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Mini Moment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xhan91.Mini-Moment";
@@ -552,6 +553,7 @@
 			baseConfigurationReference = 97E11B5D783694DB7EA98825 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Mini Moment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xhan91.Mini-Moment";
